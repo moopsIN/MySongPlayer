@@ -20,15 +20,37 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_playButton_clicked()
 {
-    player->play();
-}
+    if(ui->playButton->text() == "Play") {
+        player->play();
+        ui->playButton->setText("Pause");
+    } else {
+        player->pause();
+        ui->playButton->setText("Play");
+    }
 
-void MainWindow::on_pauseButton_clicked()
-{
-    player->pause();
 }
 
 void MainWindow::on_stopButton_clicked()
 {
     player->stop();
+}
+
+void MainWindow::on_pauseButton_clicked() {
+
+}
+
+void MainWindow::on_stopButton_2_clicked()
+{
+    if (ui->stopButton_2->text() == "Mute") {
+        player->setMuted(true);
+        ui->stopButton_2->setText("Unmute");
+    } else {
+        player->setMuted(false);
+        ui->stopButton_2->setText("Mute");
+    }
+}
+
+void MainWindow::on_volumeSlider_sliderMoved(int position)
+{
+    player->setVolume(position);
 }

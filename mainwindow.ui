@@ -17,10 +17,10 @@
    <widget class="QPushButton" name="playButton">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>30</x>
       <y>50</y>
       <width>171</width>
-      <height>71</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -29,34 +29,16 @@
      </font>
     </property>
     <property name="text">
-     <string>Play Song</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pauseButton">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>140</y>
-      <width>171</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>16</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Pause Song</string>
+     <string>Play</string>
     </property>
    </widget>
    <widget class="QPushButton" name="stopButton">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>230</y>
+      <x>30</x>
+      <y>110</y>
       <width>171</width>
-      <height>71</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -68,6 +50,43 @@
      <string>Stop Song</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="stopButton_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>170</y>
+      <width>171</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Mute</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="volumeSlider">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>60</y>
+      <width>22</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="value">
+     <number>60</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -75,7 +94,7 @@
      <x>0</x>
      <y>0</y>
      <width>300</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

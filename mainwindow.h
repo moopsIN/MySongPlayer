@@ -23,6 +23,10 @@ private slots:
 
     void on_stopButton_clicked();
 
+    void on_stopButton_2_clicked();
+
+    void on_volumeSlider_sliderMoved(int position);
+
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *player;
