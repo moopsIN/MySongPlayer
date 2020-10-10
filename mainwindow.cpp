@@ -10,6 +10,10 @@ MainWindow::MainWindow(QWidget *parent)
     player = new QMediaPlayer;
     player->setMedia(QUrl::fromLocalFile("D:/Moops/Tutorials/Qt/MySongPlayer/MySongPlayer/music.mp3"));
     player->setVolume(60);
+
+    connect(player, SIGNAL(positionChanged(qint64)),
+            this, SLOT(updateSeekBar(qint64))
+            );
 }
 
 MainWindow::~MainWindow()
@@ -20,6 +24,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_playButton_clicked()
 {
+    ui->seekBar->setMaximum(player->duration());
     if(ui->playButton->text() == "Play") {
         player->play();
         ui->playButton->setText("Pause");
@@ -54,3 +59,13 @@ void MainWindow::on_volumeSlider_sliderMoved(int position)
 {
     player->setVolume(position);
 }
+
+void MainWindow::on_seekBar_sliderMoved(int position)
+{
+    player->setPosition(position);
+}
+
+void MainWindow::updateSeekBar(qint64 position) {
+    ui->seekBar->setValue(position);
+}
+

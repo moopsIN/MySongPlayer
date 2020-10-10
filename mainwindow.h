@@ -27,6 +27,10 @@ private slots:
 
     void on_volumeSlider_sliderMoved(int position);
 
+    void on_seekBar_sliderMoved(int position);
+
+    void updateSeekBar(qint64);
+
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *player;
